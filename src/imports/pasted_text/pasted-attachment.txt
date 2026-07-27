@@ -1,0 +1,181 @@
+CHILIBOWL — Design Brief para Figma
+1. Identidad de Marca
+Tono: Divertido, juvenil, directo, vibrante Audiencia: Público joven y familiar (15–35), amantes de lo dulce y picante Personalidad: Energética, fresca, lúdica, Instagram-friendly
+
+2. Paleta Cromática (exacta)
+Token	HEX	OKLCH	Uso
+Rojo principal	#D61F26	oklch(0.45 0.22 30)	CTAs, acentos, backgrounds destacados
+Rojo oscuro	#8B1113	oklch(0.30 0.14 28)	Sombras, hover states, variante oscura
+Verde principal	#A8CF18	oklch(0.76 0.18 120)	Secondary accents, "BOWL", iconos frescura
+Verde oscuro	#6E8F12	oklch(0.58 0.12 120)	Fondos de iconos en sección diferenciadores
+Amarillo	#F6B21A	oklch(0.78 0.16 85)	Mangos, estrellas, badges, hover states
+Naranja	#F47B20	oklch(0.68 0.18 55)	Badges "NUEVO", hover gradient
+Negro	#111111	—	Textos principales, bordes gruesos
+Blanco	#FFFFFF	—	Superficies, texto en fondos oscuros
+Crema	#F9F5ED	oklch(0.94 0.012 75)	Fondo general del sitio
+Variantes dark mode:
+
+Fondo: #0d0d0d en vez de crema
+Superficies: #1a1a1a en vez de blanco
+Texto secundario: #aaa en vez de #444
+Bordes: #333 en vez de #111
+3. Tipografía
+Headings: Bebas Neue
+Family: Bebas Neue (sans-serif display, compacta, bold)
+Usos: H1–H3, botones, precios, números grandes, etiquetas
+Letter-spacing global: 0.03em (ligero tracking display)
+Escala:
+H1 hero: clamp(3rem, 6vw, 5rem)
+H2 sección: clamp(2.4rem, 5vw, 4rem)
+H3 card: 1.4–1.8rem
+Botones: 1.2–1.4rem
+Precios: 1.5–1.6rem
+Contorneado: El logo "CHILI" en rojo + "BOWL" en verde con -webkit-text-stroke: 2px #111. Para dark mode, stroke se mantiene negro o se ajusta a gris oscuro.
+Body: Nunito
+Family: Nunito (sans-serif humanista, amigable, redondeada)
+Weights: 400 (body), 600 (semibold), 700 (bold), 800 (extrabold), 900 (black)
+Usos: Párrafos, descripciones, navegación, etiquetas
+Body size: 16px / 1rem
+Line-height: 1.6 (body), 1.5 (descripciones densas)
+Max-width: 65ch para bloques de texto
+Subtextos / meta: 0.85–0.95rem, color var(--text-secondary)
+Regla de pairing: Bebas Neue para jerarquía display + Nunito para legibilidad. Sin serif en ninguna parte. Prohibido mezclar fuentes display que compiten — Bebas Neue es la única display.
+
+4. Componentes UI (especificaciones para Figma)
+4.1 Botones
+Propiedad	Primario	Secundario
+Fondo	Rojo #D61F26	Blanco / surface
+Texto	Blanco, Bebas Neue, 1.3rem	Rojo, Bebas Neue, 1.3rem
+Borde	3px solid negro	3px solid negro
+Padding	14px 36px	14px 36px
+Gap icono-texto	10px	10px
+Hover	Fondo naranja #F47B20, translate(-3,-3), shadow 6px 6px 0 negro	Fondo amarillo #F6B21A, translate(-3,-3), shadow 6px 6px 0 negro
+Active	scale(0.97)	scale(0.97)
+Focus-visible	outline 3px solid rojo, offset 3px	outline 3px solid rojo, offset 3px
+Reglas:
+
+Texto del botón siempre en UNA línea (máx 3 palabras, 15-18ch)
+Mismo gap icono en todos los botones (10px)
+Iconos en SVG outline 2px, 18×18px dentro de botones
+4.2 Cards de menú
+Propiedad	Valor
+Fondo	Blanco / surface
+Borde	3px solid negro
+Border-radius	0 (esquinas rectas)
+Sombra hover	8px 8px 0 var(--shadow)
+Transform hover	translate(-4px, -4px)
+Imagen	aspect-ratio 4/3, fondo tintado con gradiente radial + emoji food (3.2rem)
+Body padding	14px 18px 18px
+Precio	Bebas Neue, 1.5rem, rojo
+Badge	Bebas Neue, 0.65rem, padding 3px 10px, borde 2px negro
+Grid: 3 columnas en desktop, 2 en tablet, 1 en mobile. Gap 24px (desktop), 20px (mobile).
+
+4.3 Prop-items (sección "¿Qué es?")
+Layout split 2-columnas:
+
+Izquierda: Caja con borde 3px negro, fondo crema, número grande "3" (Bebas Neue 6rem, rojo contorneado), label "INGREDIENTES", sub "Una sola experiencia", 3 iconos SVG en fila (fresa, mango, chili)
+Derecha: 3 items verticales con gap 20px. Cada item: icono 52×52px fondo rojo + título Bebas Neue 1.4rem + descripción Nunito 0.9rem text-secondary
+4.4 Diferenciadores
+Fondo negro, 3 columnas. Cada card:
+
+Borde 3px verde principal
+Icono 56×56px fondo verde oscuro con SVG blanco
+Título Bebas Neue 1.7rem verde
+Descripción Nunito 0.88rem gris (#aaa)
+Hover: border-color cambia a amarillo, scale(1.02)
+4.5 Galería
+Grid 4 columnas, gap 12px. Cada item:
+
+aspect-ratio 1/1, borde 3px negro
+Fondo tintado con gradiente radial + emoji food 3.2rem
+Overlay inferior (translateY oculto, aparece en hover): fondo negro 75%, texto blanco, icono SVG + username
+Hover: scale(1.03), border-color rojo
+4.6 Formulario / inputs (para versión con pedidos)
+Label arriba del input (Nunito 0.9rem bold)
+Input: borde 3px negro, padding 12px 16px, Nunito 1rem
+Placeholder: color text-muted, 4.5:1 contrast ratio
+Error: texto rojo debajo del input, Nunito 0.8rem
+Focus: outline 3px rojo
+5. Layout & Sections (estructura de página)
+Breakpoints: 640px / 768px / 960px / 1120px (max-width container)
+
+Sección	Background	Layout	Altura
+Hero	Crema → gradiente suave a #fce8d8	Split 50/50	min-height 100dvh
+Propuesta	Blanco	2-col split	dinámico
+Divider splash	Gradiente rojo-naranja-amarillo	32px bar	fija
+Menú	Crema	3-col grid	dinámico
+Diferenciadores	Negro	3-col grid	dinámico
+Galería	Blanco	4-col grid	dinámico
+Ubicación	Crema	2-col split	dinámico
+CTA final	Rojo sólido	Centrado	80px padding v
+Footer	Negro	4-col grid	dinámico
+Nav: Fixed, 64px altura, transparente al inicio, bg sólido con borde inferior al scrollear. 4 links + theme toggle. Mobile: hamburguesa → menú fullscreen.
+
+Hero constraints:
+
+Max 4 elementos textuales (tagline 3 líneas + descripción + CTAs)
+Sin eyebrow, sin "trusted by", sin feature list
+Top padding max pt-24 (6rem)
+CTA visible sin scroll
+Subtexto máx 20 palabras
+6. Iconografía (SVG para implementar en Figma)
+Todos los iconos deben ser outline, 2px stroke, round caps/joins, 24×24px viewBox:
+
+Chili — forma de chile con curvas
+Strawberry — fresa con hojas
+Mango — óvalo alargado ligeramente rotado
+Bear — dos círculos grandes (orejas) + uno mediano (cara) + ojos pequeños rellenos
+Heart — corazón estándar
+Sparkle — estrella de 4 puntas
+Map-pin — pin de ubicación
+Clock — reloj con manecillas
+Phone — teléfono
+Instagram — cámara cuadrada
+Facebook — f minúscula
+Music — nota musical + círculos
+Message-circle — burbuja de chat
+Shopping-bag — bolsa de compras
+Truck — camión de delivery
+Arrow-right — flecha derecha
+Leaf — hoja (para sección frescura)
+Zap — rayo (para sección velocidad)
+Regla: Un solo estilo de iconos en todo el proyecto. Stroke 2px consistente. Sin filled ni outline mixtos.
+
+7. Motion & Animaciones (especificaciones)
+Elemento	Animación	Timing
+Hero tagline	Fade-in + translateY(40 → 0)	0.7s ease
+Bowl SVG	Scale(.92 → 1) + fade	0.7s ease
+Splatters	Float infinito (Y -10px + rotate 4°)	3.5–5s loop
+Propuesta items	Stagger desde derecha (translateX 40 → 0)	0.7s ease, delay 0.1s c/u
+Menu cards	Stagger desde abajo (translateY 40 → 0)	0.7s ease, delay 0.08s c/u
+Diferenciadores	Izquierda/centro/derecha alternados	0.7s ease
+Galería	Scale (.92 → 1)	0.7s ease
+Hover cards	translate(-4,-4) + box-shadow	0.25s ease
+Hover botones	translate(-3,-3) + bg swap	0.25s ease
+Nav scroll	bg fade + border-bottom appear	0.3s ease
+Dark mode toggle	Crossfade SVG iconos	0.2s ease
+Reduced motion: @media (prefers-reduced-motion: reduce) desactiva todas las animaciones de entrada. Los hover transforms se mantienen.
+
+8. Assets faltantes para producción
+ Fotos reales del producto (6 variantes de bowl)
+ Logo vectorial final (SVG)
+ Foto de local / fachada
+ Google Maps embed (ubicación real)
+ Logos de delivery partners (Uber Eats, Didi, Rappi) en SVG
+ 8+ fotos UGC para galería (simuladas o reales)
+ Foto hero de alta calidad (1600×1200px, bowl en entorno natural)
+9. Anti-patrones a evitar (basado en skills)
+❌ Emojis como iconos estructurales (solo aceptados en contenido editorial tipo descripciones)
+❌ 3 columnas iguales de features
+❌ Gradientes decorativos en texto
+❌ Glassmorphism como default
+❌ Inter como tipografía default (usar Nunito + Bebas Neue)
+❌ Side-stripe borders
+❌ Eyebrow sobre cada sección (máx 1 cada 3 secciones)
+❌ Números de sección (01 / 02 / 03)
+❌ Sombras negras puras (usar tinted shadows)
+❌ border-radius > 16px en cards
+❌ Fondos beige/crema en dark mode como default
+❌ Hero que no cabe en el viewport
+❌ Botones con texto partido en 2 líneas
+❌ Misma intención de CTA duplicada con distinto label

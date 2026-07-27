@@ -1,0 +1,14 @@
+{
+  "title": "ChiliBowl — Donde el sabor se vuelve adicción",
+  "description": "Piña, sandía, fresa y uvas con chamoy artesanal de Jamaica. Hecho en Loja, Ecuador.",
+  "robots": {
+    "index": true
+  },
+  "icons": {
+    "icon": "/favicon.png"
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
