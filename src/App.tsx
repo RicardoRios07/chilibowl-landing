@@ -633,16 +633,19 @@ function Menu({ dark }: { dark: boolean }) {
               onClick={() => setModalOpen(false)}
             >
               <div
-                className="w-full max-w-md overflow-hidden animate-scale-in"
+                className="w-full max-w-md animate-scale-in"
                 style={{
                   backgroundColor: surface,
                   borderRadius: '1.25rem',
                   boxShadow: '0 24px 64px rgba(0,0,0,0.25)',
+                  maxHeight: '90dvh',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
                 onClick={e => e.stopPropagation()}
               >
-                <div className="relative"><img src={bowlImg} alt="Bowl Clásico ChiliBowl" className="w-full object-cover" style={{ maxHeight: '40vh' }} /><button onClick={() => setModalOpen(false)} className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full" style={{ backgroundColor: 'rgba(0,0,0,0.5)', color: '#fff', border: 'none', cursor: 'pointer' }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg></button></div>
-                <div style={{ padding: '1.5rem' }}>
+                <div className="relative flex-shrink-0"><img src={bowlImg} alt="Bowl Clásico ChiliBowl" className="w-full object-cover" style={{ maxHeight: '30vh' }} /><button onClick={() => setModalOpen(false)} className="absolute top-3 right-3 w-11 h-11 flex items-center justify-center rounded-full" style={{ backgroundColor: 'rgba(0,0,0,0.5)', color: '#fff', border: 'none', cursor: 'pointer' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg></button></div>
+                <div style={{ padding: '1.25rem 1.25rem 1.5rem', overflowY: 'auto' }}>
                   <div className="flex items-baseline justify-between gap-2 mb-1">
                     <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.8rem', letterSpacing: '0.03em', color: text, margin: 0 }}>
                       {item.name}
@@ -709,10 +712,10 @@ function Menu({ dark }: { dark: boolean }) {
                             Cuenta de {b.type} &middot; Titular: Rosa Hurtado
                           </div>
                           <span
-                            className="absolute right-2 top-1/2 -translate-y-1/2 text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                            className="absolute right-2 top-1/2 -translate-y-1/2 text-xs group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
                             style={{ fontFamily: "'Nunito', sans-serif", color: muted }}
                           >
-                            Copiar
+                            📋 Copiar
                           </span>
                         </div>
                       ))}
