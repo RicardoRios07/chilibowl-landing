@@ -666,6 +666,59 @@ function Menu({ dark }: { dark: boolean }) {
                     </div>
                   </div>
 
+                  <details style={{ marginBottom: '1rem' }}>
+                    <summary
+                      style={{
+                        fontFamily: "'Bebas Neue', sans-serif",
+                        fontSize: '1rem',
+                        letterSpacing: '0.03em',
+                        color: text,
+                        cursor: 'pointer',
+                        padding: '0.5rem 0',
+                        userSelect: 'none',
+                      }}
+                    >
+                      💳 MÉTODOS DE PAGO
+                    </summary>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.5rem' }}>
+                      {[
+                        { bank: 'Banco de Loja', account: '2902116304', type: 'Ahorros' },
+                        { bank: 'Banco Pichincha', account: '2211729644', type: 'Ahorros' },
+                        { bank: 'Banco de Guayaquil', account: '0025303062', type: 'Ahorros' },
+                        { bank: 'Cooperativa Mego', account: '401010937170', type: 'Ahorros' },
+                      ].map((b) => (
+                        <div
+                          key={b.bank}
+                          className="group relative"
+                          style={{
+                            padding: '0.6rem 0.75rem',
+                            backgroundColor: dark ? '#222' : '#f5f5f0',
+                            borderRadius: '0.5rem',
+                            cursor: 'pointer',
+                            userSelect: 'all',
+                          }}
+                          onClick={() => navigator.clipboard.writeText(b.account)}
+                        >
+                          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '0.8rem', fontWeight: 700, color: text }}>
+                            {b.bank}
+                          </div>
+                          <div style={{ fontSize: '0.9rem', color: '#D61F26', fontFamily: 'monospace', letterSpacing: '0.05em' }}>
+                            {b.account}
+                          </div>
+                          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '0.7rem', color: muted, marginTop: '1px' }}>
+                            Cuenta de {b.type} &middot; Titular: Rosa Hurtado
+                          </div>
+                          <span
+                            className="absolute right-2 top-1/2 -translate-y-1/2 text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                            style={{ fontFamily: "'Nunito', sans-serif", color: muted }}
+                          >
+                            Copiar
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+
                   <a
                     href={`https://wa.me/593988683156?text=${encodeURIComponent('¡Hola! Quiero pedir un Bowl Clásico 🍍')}`}
                     target="_blank"
